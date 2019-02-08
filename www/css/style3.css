@@ -1,0 +1,96 @@
+#hrline {
+  background-color:#009530;
+  margin-left: 1px;
+  margin-right:1px;
+  margin-top:0px;
+  height: 4px;
+  width: 100%;
+}
+p, form { margin: 0; /*display: inline;*/}
+body { margin: 0px ; }
+html, body, input, select {
+  color: #009530;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: left;
+  width:auto;
+}
+.logoSchneider{
+	width: 160px;
+}
+
+.fixed_headers_d th,
+.fixed_headers_d td {
+    padding: 5px;
+	text-align: center;
+/*    min-width: 100px;*/
+/*	width:400px;*/
+/* width: 100%; */
+
+}
+.fixed_headers_d td:nth-child(1),
+.fixed_headers_d th:nth-child(1) {
+    min-width: 100px;
+	width:250px;
+}
+.fixed_headers_d td:nth-child(2),
+.fixed_headers_d th:nth-child(2) {
+    min-width: 100px;
+		width:250px;
+}
+.fixed_headers_d td:nth-child(3),
+.fixed_headers_d th:nth-child(3) {
+
+    min-width: 100px;
+		width:250px;
+}
+.fixed_headers_d td:nth-child(4),
+.fixed_headers_d th:nth-child(4) {
+
+    min-width: 100px;
+		width:250px;
+}
+.fixed_headers_d thead {
+ background-color: #009530;
+ color: #FDFDFD;
+ width: 100%;
+ border: none;
+}
+.fixed_headers_d thead tr th {
+	display: inline-block;
+	border: none;
+}
+.fixed_headers_d tbody {
+  display: inline-block;
+  overflow-y: auto;
+  width: 100%;
+  height: 300px;
+  border:1px solid #009530;
+}
+.fixed_headers_d input{
+	border: none;
+}
+.fixed_headers_d table{
+	border-color: #009530;
+	border:none;
+}
+.fixed_headers_d {
+/*width:100%;*/
+margin-top:20px;
+}
+
+
+.ramkaLewa{
+    width:100%;
+    margin: 3px;
+    border: 3px solid #009530;
+    padding: 3px;
+    padding-left: 10px;
+    font-size: 18px;
+    color: #009530;
+    text-align-last: left;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
