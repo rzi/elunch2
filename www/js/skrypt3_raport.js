@@ -76,51 +76,51 @@ $("#datepicker").change(function () {
     });
 
     row_index = 0;
-    col_index = 0;
+//    col_index = 0;
 });
 
-    // Obsługa enter
-$('#table1 input').keyup(function(e) {
-	console.log('keyup called');
-  var code = e.keyCode || e.which;
-	if (code == '13') {
-	value1 = $('#datepicker').val();
-    console.log('wartośc inputa',value1)
-    var date1 = $("#datepicker").datepicker().val();
-    var czas1 = getTime() + ":00";
-    dost1= $(".act span").text();
-
-		var request = $.ajax({
-            async: true,
-            method: "GET",
-            url: "dane_do_bazy2.php",
-            data: {
-                sesa: value2,
-                data: date1,
-                dostawca: dost1,
-                danie: value1,
-                czas: czas1
-				}		
-		});
-    request.done (function () {
-
-                   /*Zdefiniowanie tzw. alertu (prostej informacji) w sytacji sukcesu wysyłania.
-                Za pomocą alertów możemy diagnozować poprawne działania funkcji.
-                Jest to bardzo przydatne w sytacji problemów z dziłaniem programu.*/
-                   //$(window).load( "order.php");
-    });
-  		//*Działania wykonywane w przypadku błędu*/
-    request.fail (function (blad) {
-    	alert("Wystąpił błąd");
-      console.log(blad);
-      //*Funkcja wyświetlająca informacje o ewentualnym błędzie w konsoli przeglądarki*/
-    });
-// });
-
-		$('#table1 tr input.danie').slice(row_index+1 ,row_index+2).focus().trigger("click"); //+1 bo talela jest liczona od 0 , +2 bo chcemy dodać 1
-       //return false;
-  }//if
-
-}); // keyup
+//    // Obsługa enter
+//$('#table1 input').keyup(function(e) {
+//	console.log('keyup called');
+//  var code = e.keyCode || e.which;
+//	if (code == '13') {
+//	value1 = $('#datepicker').val();
+//    console.log('wartośc inputa',value1)
+//    var date1 = $("#datepicker").datepicker().val();
+//    var czas1 = getTime() + ":00";
+//    dost1= $(".act span").text();
+//
+//		var request = $.ajax({
+//            async: true,
+//            method: "GET",
+//            url: "dane_do_bazy2.php",
+//            data: {
+//                sesa: value2,
+//                data: date1,
+//                dostawca: dost1,
+//                danie: value1,
+//                czas: czas1
+//				}
+//		});
+//    request.done (function () {
+//
+//                   /*Zdefiniowanie tzw. alertu (prostej informacji) w sytacji sukcesu wysyłania.
+//                Za pomocą alertów możemy diagnozować poprawne działania funkcji.
+//                Jest to bardzo przydatne w sytacji problemów z dziłaniem programu.*/
+//                   //$(window).load( "order.php");
+//    });
+//  		//*Działania wykonywane w przypadku błędu*/
+//    request.fail (function (blad) {
+//    	alert("Wystąpił błąd");
+//      console.log(blad);
+//      //*Funkcja wyświetlająca informacje o ewentualnym błędzie w konsoli przeglądarki*/
+//    });
+//// });
+//
+//		$('#table1 tr input.danie').slice(row_index+1 ,row_index+2).focus().trigger("click"); //+1 bo talela jest liczona od 0 , +2 bo chcemy dodać 1
+//       //return false;
+//  }//if
+//
+//}); // keyup
 
 }); /*Klamra zamykająca $(document).ready(function(){*/
