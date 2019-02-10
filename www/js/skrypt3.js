@@ -63,7 +63,8 @@ $(".nav-tabs a").click(function () {
 $('.nav-tabs a').on('shown.bs.tab', function (event) {
 		 dostawca = $(event.target).text(); // active tab
 		$(".act span").text(dostawca);
-		$("#datepicker").change();});
+		$("#datepicker").change();
+});
 $("#datepicker").change(function () {
 	var date1 = $("#datepicker").val();
 	console.log("data: ",date1);
@@ -76,51 +77,47 @@ $("#datepicker").change(function () {
 			$("#dane_tabela3").load("tabela3.php");
 		break;
 	}
-
-		//	$("#dane_tabela2").load("tabela2.php", {
-		//							d1: date1
-		//	});
 	row_index = 0;
 });
-// Obsługa enter
-	$('#table1 input').keyup(function(e) {
-		console.log('keyup called');
-		var code = e.keyCode || e.which;
-		
-			if(typeof code == 'number'){
-				if (code == '13') {
-					value1 = $('#datepicker').val();
-					console.log('wartośc inputa',value1)
-					//var date1 = $("#datepicker").datepicker().val();
-					var czas1 = getTime() + ":00";
-					dost1= $(".act span").text();
-					//alert (date1);
-					var request = $.ajax({
-						async: true,
-						method: "GET",
-						url: "dane_do_bazy2.php",
-						data: {
-							sesa: value2,
-							data: date1,
-							dostawca: dost1,
-							danie: value1,
-							czas: czas1
-						}
-					});
-					request.done (function () {
-					 /*Zdefiniowanie tzw. alertu (prostej informacji) w sytacji sukcesu wysyłania.*/
-					});
-						/*Działania wykonywane w przypadku błędu*/
-					request.fail (function (blad) {
-						alert("Wystąpił błąd");
-						console.log(blad);
-					});
-					$('#table1 tr input.danie').slice(row_index+1 ,row_index+2).focus().trigger("click"); //+1 bo talela jest liczona od 0 , +2 bo chcemy dodać 1
-						 //return false;
-				}
-			}else{
-			alert ("wprowadź liczbę");
-			}
-		
-	}); // keyup
+//// Obsługa enter
+//	$('#table1 input').keyup(function(e) {
+//		console.log('keyup called');
+//		var code = e.keyCode || e.which;
+//
+//			if(typeof code == 'number'){
+//				if (code == '13') {
+//					value1 = $('#datepicker').val();
+//					console.log('wartośc inputa',value1)
+//					//var date1 = $("#datepicker").datepicker().val();
+//					var czas1 = getTime() + ":00";
+//					dost1= $(".act span").text();
+//					//alert (date1);
+//					var request = $.ajax({
+//						async: true,
+//						method: "GET",
+//						url: "dane_do_bazy2.php",
+//						data: {
+//							sesa: value2,
+//							data: date1,
+//							dostawca: dost1,
+//							danie: value1,
+//							czas: czas1
+//						}
+//					});
+//					request.done (function () {
+//					 /*Zdefiniowanie tzw. alertu (prostej informacji) w sytacji sukcesu wysyłania.*/
+//					});
+//						/*Działania wykonywane w przypadku błędu*/
+//					request.fail (function (blad) {
+//						alert("Wystąpił błąd");
+//						console.log(blad);
+//					});
+//					$('#table1 tr input.danie').slice(row_index+1 ,row_index+2).focus().trigger("click"); //+1 bo talela jest liczona od 0 , +2 bo chcemy dodać 1
+//						 //return false;
+//				}
+//			}else{
+//			alert ("wprowadź liczbę");
+//			}
+//
+//	}); // keyup
 }); /*Klamra zamykająca $(document).ready(function(){*/
