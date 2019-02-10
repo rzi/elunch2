@@ -10,7 +10,15 @@
 //echo $date1;
 require "connection.php";
 connection();
-echo "<table id='table1' class='fixed_headers' style='width:100%;' border='0'><thead><tr style='width:98%;'><th style='width:15%;'>id_user </th><th style='width:25%;'>Imię</th><th style='width:25%;'>Nazwisko</th><th style='width:35%;'> Danie</th></tr></thead>";
+echo "<table id='table1' class='fixed_headers' style='width:100%;' border='1'>
+<thead>
+	<tr style='width:98%;'>
+		<th style='width:20%;'>id_user </th>
+		<th style='width:25%;'>Imię</th>
+		<th style='width:25%;'>Nazwisko</th>
+		<th style='width:30%;'> Danie</th>
+	</tr>
+</thead>";
 
 echo "<tbody>";
 
@@ -19,7 +27,8 @@ echo "<tbody>";
         $val = $row['id_users'];
         $val2 = $row['my_first_name'];
         $val3 = $row['my_name'];
-        echo "<tr><td  style='width:15%;'>";
+        echo "<tr>
+				<td  style='width:20%;'>";
         echo "<input type='text' style='width:100%;' name='danie0' value='$val' readonly> ";
         echo "</td>";
         echo "<td  style='width:25%;'>";
@@ -28,7 +37,7 @@ echo "<tbody>";
         echo "<td  style='width:25%;'>";
         echo "<input type='text' style='width:100%;' name='danie2' value='$val3' readonly>";
         echo "</td>";
-        echo "<td style='width:35%;'>";
+        echo "<td style='width:30%;'>";
         echo "<input type='text' style='width:100%;' id='danie33' class='danie'  value=''>";
         echo "</td>";
         echo "</tr>" ;
@@ -36,10 +45,8 @@ echo "<tbody>";
 }
 mysqli_free_result($result);
 mysqli_close($link);
-echo "</td>
-        </tr>
-        </tbody>
-        </table>";
+echo "</tbody>
+     </table>";
 ?>
 </body>
 </html>
